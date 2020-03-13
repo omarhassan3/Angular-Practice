@@ -1,6 +1,6 @@
-html
+/* html
 { 
-  /* background-image: url("https://cdn3.f-cdn.com/contestentries/1476645/23802538/5c790905289ca_thumb900.jpg"); */
+  background-image: url("https://cdn3.f-cdn.com/contestentries/1476645/23802538/5c790905289ca_thumb900.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: cover; }
@@ -339,4 +339,4 @@ table tr th, table tr td
 table tr td
 { background: #E5E5DB;
   color: #47433F;
-  border-top: 1px solid #FFF;}
+  border-top: 1px solid #FFF;} */

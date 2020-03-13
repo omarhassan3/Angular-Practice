@@ -33,6 +33,20 @@ export class EmployeeComponent implements OnInit {
 
   }
 
+ add(name: string): void {
+  name = name.trim();
+  if (!name) { return; }
+  this.employeeService.addEmployee({ name } as Employee)
+    .subscribe(hero => {
+      this.employees.push(Employee);
+    });
+}
+
+delete (employee: Employee): void{
+
+  this.employees = this.employees.filter(e => e !== employee);
+  this.employeeService.deleteEmployee(employee).subscribe();
+}
   
 
 }

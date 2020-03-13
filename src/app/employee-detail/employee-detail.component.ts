@@ -53,4 +53,8 @@ export class EmployeeDetailComponent implements OnInit {
     
   }
 
+  save():void{
+    this.employeeService.updateEmployee(this.employee).subscribe(()=> this.goBack());
+  }
+
 }
