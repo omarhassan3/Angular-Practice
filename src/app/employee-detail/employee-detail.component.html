@@ -1,0 +1,14 @@
+<div *ngIf='employee'>
+
+<h2 style = text-align:center;>{{employee.name|uppercase}} Details</h2>
+  <div><span>ID Number:</span>{{employee.id}}</div>
+    <div>
+     <label>Full Name:
+        <input [(ngModel)] = 'employee.name' placeholder="name"/>
+     </label>
+    </div>
+ <button (click)="goBack()">go back</button>
+</div>
+
+
+
