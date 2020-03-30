@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Employee } from './employee';
 
-import { EMPLOYEES } from './mock-employees';
-
 import { Observable, of } from 'rxjs';
 
 import { MessageService } from './message.service';
@@ -22,6 +20,12 @@ export class EmployeeService {
 
 private employeesUrl = 'api/employees';
 
+htppOptions = {
+
+headers: new HttpHeaders({'Content-Type': ' application/json'})
+
+};
+
 constructor(private messageService: MessageService, private http:HttpClient) 
 { 
 
@@ -32,6 +36,19 @@ getEmployees(): Observable<Employee[]>{
 return this.http.get<Employee[]>(this.employeesUrl).pipe(tap(_=> this.log('fetched employees')),catchError(this.handleError<Employee[]>('getEmployees', [])));
 
 }
+
+getHeroNo404<Data>(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/?id=${id}`;
+    return this.http.get<Employee[]>(url)
+      .pipe(
+        map(employees => employees[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} employee id=${id}`);
+        }),
+        catchError(this.handleError<Employee>(`getHero id=${id}`))
+      );
+  }
 
 getEmployee(id: number): Observable<Employee> {
 
