@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Employee } from '../employee';
-
 import { ActivatedRoute } from '@angular/router';
+
+import { Employee } from '../employee';
 
 import { Location } from '@angular/common';
 
