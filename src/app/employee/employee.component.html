@@ -1,13 +1,5 @@
 
 <h2>My Employees</h2>
-<ul class='employee' >
-  <li *ngFor='let employee of employees'>
-    <a routerLink = '/detail/{{employee.id}}'>
-    <span class='badge'>{{employee.id}} </span>{{employee.name}}
-    </a>
-    <button class ='delete' title =' delete employee' (click)='delete(employee)'>Delete</button>
-  </li>
-</ul>
 
 <div>
   <label>Employee Name:
@@ -16,14 +8,11 @@
   <button (click) = "add(employeeName.value); employeeName.value = '' ">Add Employee </button>
 </div>
 
-<!-- <div *ngIf='selectedEmployee'>
-
-<h2>{{selectedEmployee.name|uppercase}} Details</h2>
-  <div><span>ID Number:</span>{{selectedEmployee.id}}</div>
-    <div>
-     <label>Full Name:
-        <input [(ngModel)] = 'selectedEmployee.name' placeholder="name"/>
-     </label>
-    </div>
-
-</div> -->
+<ul class='employee' >
+  <li *ngFor='let employee of employees'>
+    <a routerLink = '/detail/{{employee.id}}'>
+    <span class='badge'>{{employee.id}} </span>{{employee.name}}
+    </a>
+    <button class ='delete' title =' delete employee' (click)='delete(employee)'>Delete</button>
+  </li>
+</ul>

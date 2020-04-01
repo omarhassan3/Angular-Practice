@@ -37,8 +37,8 @@ export class EmployeeComponent implements OnInit {
   name = name.trim();
   if (!name) { return; }
   this.employeeService.addEmployee({ name } as Employee)
-    .subscribe(hero => {
-      this.employees.push(Employee);
+    .subscribe(employee => {
+      this.employees.push(employee);
     });
 }
 
